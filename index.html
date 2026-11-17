@@ -1,1 +1,190 @@
-
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yearbook XII2</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e1424;--sf:#161d33;--tx:#ece6d6;--mt:#a7a79f;--gd:#c9a95c;--ln:#2a3352;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f7f2e7;--sf:#fffdf6;--tx:#1b2238;--mt:#6b6a62;--gd:#9a7a2e;--ln:#e2d8bf}}
+:root[data-theme="light"]{--bg:#f7f2e7;--sf:#fffdf6;--tx:#1b2238;--mt:#6b6a62;--gd:#9a7a2e;--ln:#e2d8bf}
+:root[data-theme="dark"]{--bg:#0e1424;--sf:#161d33;--tx:#ece6d6;--mt:#a7a79f;--gd:#c9a95c;--ln:#2a3352}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Jost,"Helvetica Neue",Arial,sans-serif;font-weight:300;line-height:1.6}
+h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-weight:700;margin:0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap;padding:12px;background:var(--bg);border-bottom:1px solid var(--ln)}
+nav a{color:var(--mt);text-decoration:none;padding:6px 14px;font-size:14px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid transparent}
+nav a.on,nav a:hover{color:var(--gd);border-color:var(--gd)}
+main{max-width:1040px;margin:0 auto;padding:32px 20px 64px}
+.view{display:none}.view.on{display:block}
+.hero{text-align:center;padding:72px 0 48px}
+.hero small{letter-spacing:.4em;color:var(--gd);text-transform:uppercase;font-size:13px}
+.hero h1{font-size:clamp(56px,14vw,120px);line-height:1;margin:16px 0;color:var(--tx)}
+.hero p{max-width:520px;margin:0 auto 28px;color:var(--mt)}
+.orn{width:80px;height:1px;background:var(--gd);margin:20px auto;position:relative}
+.orn:after{content:"◆";position:absolute;left:50%;top:-9px;transform:translateX(-50%);color:var(--gd);font-size:11px;background:var(--bg);padding:0 8px}
+.btn{display:inline-block;border:1px solid var(--gd);color:var(--gd);padding:10px 26px;text-decoration:none;letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+.btn:hover{background:var(--gd);color:var(--bg)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-top:40px}
+.stat{background:var(--sf);border:1px solid var(--ln);padding:20px;text-align:center}
+.stat b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:44px;color:var(--gd);line-height:1}
+.stat span{font-size:13px;color:var(--mt);letter-spacing:.1em;text-transform:uppercase}
+.title{text-align:center;margin-bottom:28px}.title h2{font-size:42px}.title p{color:var(--mt);margin:4px 0 0}
+input[type=search]{display:block;margin:0 auto 28px;width:100%;max-width:360px;padding:10px 14px;background:var(--sf);border:1px solid var(--ln);color:var(--tx);font:inherit}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.card{background:var(--sf);border:1px solid var(--ln);padding:14px 14px 18px;text-align:center}
+.ph{position:relative;aspect-ratio:3/4;margin-bottom:12px;background:linear-gradient(160deg,var(--ln),var(--sf));display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--gd);cursor:pointer}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph span{font-family:"Cormorant Garamond",Georgia,serif;font-size:54px;color:var(--gd)}
+.ph em{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.55);color:#fff;font-size:11px;font-style:normal;padding:3px;opacity:0;transition:.2s}
+.ph:hover em{opacity:1}
+.card h3{font-size:20px;line-height:1.2}
+.card .c{color:var(--gd);font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:4px 0 8px}
+.card q{display:block;font-size:13px;color:var(--mt);font-style:italic;quotes:none}
+.card a{display:inline-block;margin-top:8px;font-size:12px;color:var(--mt)}
+.grp{margin-bottom:30px}.grp h3{font-size:28px;border-bottom:1px solid var(--gd);padding-bottom:6px;margin-bottom:12px}
+.grp h3 small{font-family:Jost,sans-serif;font-size:14px;color:var(--mt);font-weight:300}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1px solid var(--ln);background:var(--sf);padding:6px 12px;font-size:14px}.chip i{color:var(--gd);font-style:normal;margin-left:6px;font-size:12px}
+.qwrap{max-width:680px;margin:0 auto;text-align:center;padding:40px 20px;background:var(--sf);border:1px solid var(--gd);min-height:260px;display:flex;flex-direction:column;justify-content:center}
+.qwrap blockquote{margin:0;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(22px,4vw,32px);font-style:italic;line-height:1.35}
+.qwrap cite{display:block;margin-top:18px;color:var(--gd);font-style:normal;letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+.ctl{display:flex;gap:12px;justify-content:center;margin:18px 0}.ctl button{background:none;border:1px solid var(--gd);color:var(--gd);padding:8px 20px;cursor:pointer;font:inherit;letter-spacing:.1em}
+.ctl button:hover{background:var(--gd);color:var(--bg)}
+.about{max-width:620px;margin:0 auto;text-align:center;color:var(--mt)}
+footer{text-align:center;color:var(--mt);font-size:13px;padding:24px;border-top:1px solid var(--ln)}
+#tg{background:none;border:1px solid var(--ln);color:var(--mt);cursor:pointer;padding:4px 10px;margin-left:8px}
+#sp{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+main,footer{position:relative;z-index:1}
+@keyframes fup{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes shim{to{background-position:-200% 0}}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pls{0%,100%{box-shadow:0 0 0 0 transparent}50%{box-shadow:0 0 22px 2px var(--gd)}}
+@keyframes spin{to{transform:translateX(-50%) rotate(360deg)}}
+.view.on{animation:fup .6s ease both}
+.hero>*{animation:fup 1s cubic-bezier(.2,.7,.2,1) both}
+.hero>:nth-child(1){animation-delay:.1s}.hero>:nth-child(2){animation-delay:.35s}.hero>:nth-child(3){animation-delay:.6s}.hero>:nth-child(4){animation-delay:.8s}.hero>:nth-child(5){animation-delay:1s}
+.hero h1{background:linear-gradient(110deg,var(--tx) 35%,var(--gd) 50%,var(--tx) 65%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:fup 1s .35s both,shim 4s 1.4s linear infinite,flt 6s 1.4s ease-in-out infinite}
+.orn:after{animation:spin 8s linear infinite}
+.btn{animation:pls 3s 1.5s infinite}
+.stat{animation:fup .8s both}.stat:nth-child(2){animation-delay:.15s}.stat:nth-child(3){animation-delay:.3s}.stat:nth-child(4){animation-delay:.45s}
+.card{transition:transform .3s,box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--gd);box-shadow:0 10px 30px -8px var(--gd)}
+.ph:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.35) 50%,transparent 60%);transform:translateX(-120%);transition:transform .8s}
+.card:hover .ph:after{transform:translateX(120%)}
+.chip{transition:.25s}.chip:hover{border-color:var(--gd);box-shadow:0 0 14px -2px var(--gd)}
+.qwrap{animation:pls 4s infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav id="nav">
+<a href="#beranda" data-v="beranda">Beranda</a><a href="#siswa" data-v="siswa">Siswa</a><a href="#cita-cita" data-v="cita-cita">Cita-Cita</a><a href="#quote" data-v="quote">Quote</a><a href="#tentang" data-v="tentang">Tentang</a>
+<button id="tg" title="Ganti tema">◐</button>
+</nav>
+<canvas id="sp"></canvas>
+<main>
+<section class="view" id="v-beranda">
+<div class="hero"><small>Buku Kenangan · Kelas XII</small><h1 class="serif">XII2</h1><div class="orn"></div><p>Tiga tahun, satu kelas, banyak cerita. Inilah wajah, mimpi, dan kata-kata kami.</p><a class="btn" href="#siswa">Lihat Siswa</a></div>
+<div class="stats"><div class="stat"><b id="s1"></b><span>Siswa</span></div><div class="stat"><b id="s2"></b><span>Kelompok Cita-Cita</span></div><div class="stat"><b id="s3"></b><span>Pengusaha</span></div><div class="stat"><b id="s4"></b><span>Pengabdi Negara</span></div></div>
+</section>
+<section class="view" id="v-siswa"><div class="title"><h2>Keluarga XII2</h2><p>Ketuk foto untuk menambahkan fotomu</p></div><input type="search" id="q" placeholder="Cari nama atau cita-cita…"><div class="grid" id="grid"></div></section>
+<section class="view" id="v-cita-cita"><div class="title"><h2>Cita-Cita</h2><p>Mimpi yang kami bawa pulang</p></div><div id="groups"></div></section>
+<section class="view" id="v-quote"><div class="title"><h2>Kata-Kata Kami</h2><p>Satu kalimat dari tiap siswa</p></div><div class="qwrap"><blockquote id="qt"></blockquote><cite id="qa"></cite></div><div class="ctl"><button id="pv">← Sebelumnya</button><button id="nx">Berikutnya →</button></div></section>
+<section class="view" id="v-tentang"><div class="title"><h2>Tentang</h2></div><div class="orn"></div><div class="about"><p>Buku tahunan digital kelas XII2, disusun dari data formulir kelas. Terima kasih untuk guru, wali kelas, dan setiap teman yang menjadikan tiga tahun ini berarti.</p><p class="serif" style="font-size:26px;color:var(--gd);font-style:italic">“Sebelum usai, sempatlah berarti.”</p></div></section>
+</main>
+<footer>© Yearbook XII2 · 2026</footer>
+<script>
+var D=[
+["Kania Putri Yulia Hapsari","Guru PNS","P","“Dream quietly, work silently, and let success make the noise.”","1ZYXySxz2Hjuc32eIz4w7aqhuXTM0MWX8"],
+["Muhamad Ridho Hidayat","Pro Player","T","Kemenangan hanyalah hasil, tetapi perjuangan adalah cerita yang tidak semua orang sanggup jalani.","1r8KjJYONmrnU4uM0iMXLd0R2QOmCluTk"],
+["M. Rafa Aulil Muttaqin","Arsitek","T","I’m not a hero, but someone who walk’s in my own path","1HzDVG6JJtbuCRmq3s-Ma7ROe4QSZMP-2"],
+["Silvyna Putri Yoko","Jaksa","N","Terima untuk 3 tahun nya, sudah saatnya aku kembali menjadi CEO","1s7HNDDp1YO_P9Voe38fJ_tGpcFoVcQ5z"],
+["Algren Raissa Novdiasta Muhammad","Pengusaha","W","Sebesar apapun penyesalanmu jarum jam tidak akan berputar ke kiri, maka bangkitlah dan hadapi layaknya seorang pria.","18WYT5s_-BEFc_GN25o32iW81wIBh7wUW"],
+["Wahyu Kusuma Ningrum","Perawat","P","Not everything has to be perfect to be valuable","1RGVHk429dTuy7cjdm39ln3ui72oAbK5U"],
+["Putri Nur Fadhillah","CEO","W","If it’s meant to be, it’ll be","1w7hdp4qe9s7u3B1CCgVujZe8D2DHidW-"],
+["Maya Nabillah Lutfiana Fitri","TNI-AD","N","Kesulitan hari ini adalah kekuatan untuk hari esok.","1Xe8gHnNlqfdMaRvmuQn2WDyLBmh1V6zl"],
+["Muhammad Anwar Romadhoni","Pengusaha Ritel","W","“Idealism is that you will probably never receive something back but nonetheless still decide to give.”","1WWAx2rctRTSQGsIB3uKAV2-J9hnESJHk"],
+["Amanda Putri Chairunnisa","Diplomat","N","Long story short, I survived","1SkEa3gSm9CZ_0JoTFX0ZhyU0BekBfw_G"],
+["Danish Maulida Khoirun Nisa","Pengusaha","W","If you think about it, it will be over in no time and that’s life. — Frank Ocean","1qitRVv-Y4OAX28R_lVOQvt0Fzr-DG6b8"],
+["Nurul Elsha Mardiana","Pengusaha","W","Silent hustle, loud result.","1pDOxr8j2nmMkegfrO7JvFkZL5o6wxzoL"],
+["Azarin Alya Zahwa","Perawat","P","Long story short, I survived","17Tm-PVMr30MiFLQuKcyIb20KpYGuIVZy"],
+["Hanasta Lian Arshel Alfatan","Menteri Keuangan","N","Rapopo rak mbendino","11P6nosF7WXetrorVPEcXRwQz-TthWdta"],
+["Khoerul Anam","Game Developer","T","I became the untold story","1uOxwO8A2VKTC9_IeYSZ-Akwq2pM6Qfr1"],
+["Uswatun Rodhotul Janah","Guru & Pebisnis","P","“Jangan cuma ingin, tapi buktikan. Mimpi butuh usaha, bukan sekadar harapan.”","1EoYxKBKVlvNBxzHy_ZIzZNTg8ApckCFG"],
+["Annisa Fatimatu Zahra","Chief Auditor","W","The best is yet to come","1DRGeFodj5xmurepnaWlkwNV5CXEk7GUO"],
+["Aunira Salsabila Ain","Arsitek","T","“Sebelum usai, sempatlah berarti.”","1KMuT48NTTa2aY2BbXwAhX1bYfCbyZRkM"],
+["Dinda Nurussyifa","Bidan","P","Kedewasaan dimulai ketika kita berhenti menyalahkan keadaan dan mulai bertanggung jawab atas pilihan sendiri","17DMaYZX8-MoQtFTwJuM_R0deomQ_gQTH"],
+["Fransiska Trisuci Rahayu Passu","HRD","W","Too young to know it all, too alive to miss it.","1-ddulJV5f5Jheth6gtPhx77W1n5hAO5D"],
+["Dimas Irawan","DPR","N","“Terwujud ataupun tidak terwujud, tetaplah bersujud”","1blTy6ChjcBkAHVILxfKp0g9xLRpfwi2x"],
+["Ahmad Khoiruz Ziaad","Arsitek","T","Jangan lupa bersyukur","1DD04VWZ6d5eiGIE5DirIdXxBztSjHXsE"],
+["Faza Wahidatuzzakiya","Orang Have","L","But I guess you’re just another chapter in a book","16LnzzVPso6-2jfBO7xWK-_FR5Hc5LT83"],
+["Yusuf Calvin Alaziz","Business Owner","W","Beli Motor Bekas Terpercaya @yusufcalvin_","1uYHfDrfG6qEi6p7aHaIXSx8cZETc7Sw-"],
+["Al Imdad Andifal Putra Yudiyono","Juragan Sawit","W","Motto ga penting yang penting mah solat solat!!!","1Zd3t1I0ggny49CwxAl2cxUN2zqDl2YrP"],
+["Arya Kumara Suwandi","TNI-AD","N","Jangan bandingkan bab -1 dengan bab -20 orang lain","1iAACqQVnv530YnS0MU85tiLMX9Rcokq7"],
+["Manda Aprita Sari","Pengusaha","W","Dream big, sleep bigger","1xnncVKLvW5RBVyXNSaL9qmfnWTAf4MJJ"],
+["Septya Rafa Alfaro","Perwira Tentara","N","Lelah bukan berarti menyerah","1nwNVPRx--ijWZKRn6-3_ccRPdiTAIdhk"],
+["Arya Fadhil Erlangga","Pilot","T","Tidur lanjutkan mimpi atau bangun wujudkan mimpi","125gij2GUB1D-KrKZIzsZ6qCsQ86cwdy8"],
+["Muhammad Sayyid Albana","Pengusaha","W","Nothing last’s forever, we can change the future.","1h4tmGAq2JRcLQOrE7v74xn688cO4OS2l"],
+["Ikmaludin","Juragan Kambing","W","Memancing mengajarkan arti sabar, ketenangan, serta ketepatan waktu dan arah dalam menjalani hidup","1P5m1eYMM7vmpIgvPmiSA7NdjrNi80ahd"],
+["Anaya Putry Avrilia","Diplomat","N","Lorem ipsum dolor sit amet","1AJvs8SDWpln1oeGuy1NS4mgoZ-roan_M"],
+["Ahmad Saiful Hanafi","Masinis","T","Tidak perlu memaksakan diri untuk menjadi orang yang serba bisa","1XMLpPzDudAHslNAdJM5kffUW37nmtpQo"],
+["Dimas Lutfi Saputra","Kerja di Korea/Jepang","L","Tidak ada kata-kata, yang penting bukti nyata","1DMWFeaO1u7Ws2TTE90kAnZcKK94JjJ2b"]
+];
+D.sort(function(a,b){return a[0].localeCompare(b[0],"id",{sensitivity:"base"})});
+var CAT={W:"Wirausaha & Bisnis",N:"Abdi Negara & Hukum",P:"Pendidikan & Kesehatan",T:"Teknik, Teknologi & Kreatif",L:"Lainnya"};
+var $=function(i){return document.getElementById(i)},ph={},qi=0;
+try{ph=JSON.parse(localStorage.getItem("yb-ph2")||"{}")}catch(e){}
+function ini(n){var p=n.split(" ");return (p[0][0]+(p[1]?p[1][0]:"")).toUpperCase()}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function render(f){
+ f=(f||"").toLowerCase();var h="";
+ D.forEach(function(d,i){
+  if(f&&(d[0]+" "+d[1]).toLowerCase().indexOf(f)<0)return;
+  h+='<div class="card"><div class="ph" data-i="'+i+'">'+(ph[d[0]]?'<img alt="'+esc(d[0])+'" src="'+ph[d[0]]+'">':'<span>'+ini(d[0])+'</span>')+'<em>Ganti foto</em></div><h3>'+esc(d[0])+'</h3><div class="c">'+esc(d[1])+'</div><q>'+esc(d[3])+'</q><a href="https://drive.google.com/open?id='+d[4]+'" target="_blank" rel="noopener">Buka foto di Drive ↗</a></div>';
+ });
+ $("grid").innerHTML=h||'<p style="text-align:center;color:var(--mt)">Tidak ditemukan.</p>';
+}
+function groups(){
+ var g={},h="";D.forEach(function(d){(g[d[2]]=g[d[2]]||[]).push(d)});
+ Object.keys(CAT).forEach(function(k){if(!g[k])return;
+  h+='<div class="grp"><h3>'+CAT[k]+' <small>'+g[k].length+' siswa</small></h3><div class="chips">'+g[k].map(function(d){return '<div class="chip">'+esc(d[0].split(" ").slice(0,2).join(" "))+'<i>'+esc(d[1])+'</i></div>'}).join("")+'</div></div>';
+ });
+ $("groups").innerHTML=h;
+}
+function showQ(){var d=D[qi];$("qt").textContent=d[3];$("qa").textContent="— "+d[0]}
+function route(){
+ var v=(location.hash||"#beranda").slice(1);if(!$("v-"+v))v="beranda";
+ document.querySelectorAll(".view").forEach(function(e){e.classList.toggle("on",e.id==="v-"+v)});
+ document.querySelectorAll("nav a").forEach(function(a){a.classList.toggle("on",a.dataset.v===v)});
+ window.scrollTo(0,0);
+}
+$("s1").textContent=D.length;$("s2").textContent=Object.keys(CAT).length;
+$("s3").textContent=D.filter(function(d){return d[2]==="W"}).length;$("s4").textContent=D.filter(function(d){return d[2]==="N"}).length;
+$("q").oninput=function(){render(this.value)};
+$("pv").onclick=function(){qi=(qi+D.length-1)%D.length;showQ()};
+$("nx").onclick=function(){qi=(qi+1)%D.length;showQ()};
+$("tg").onclick=function(){var r=document.documentElement,dk=getComputedStyle(r).getPropertyValue("--bg").trim()==="#0e1424";r.dataset.theme=dk?"light":"dark"};
+var fi=document.createElement("input");fi.type="file";fi.accept="image/*";var cur=null;
+fi.onchange=function(){
+ var f=fi.files[0];if(!f||cur===null)return;var i=cur,r=new FileReader();
+ r.onload=function(){var im=new Image();im.onload=function(){
+  var w=300,h=Math.round(w*im.height/im.width),c=document.createElement("canvas");
+  if(h<w*1.33){h=400;w=Math.round(h*im.width/im.height)}
+  c.width=w;c.height=h;c.getContext("2d").drawImage(im,0,0,w,h);
+  ph[D[i][0]]=c.toDataURL("image/jpeg",.75);try{localStorage.setItem("yb-ph2",JSON.stringify(ph))}catch(e){}
+  render($("q").value)};im.src=r.result};
+ r.readAsDataURL(f);fi.value="";
+};
+$("grid").onclick=function(e){var p=e.target.closest(".ph");if(!p)return;cur=+p.dataset.i;fi.click()};
+window.addEventListener("hashchange",route);
+render();groups();showQ();route();
+(function(){var c=$("sp"),x=c.getContext("2d"),P=[],W,H;
+function rs(){W=c.width=innerWidth;H=c.height=innerHeight}rs();addEventListener("resize",rs);
+for(var i=0;i<70;i++)P.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.9+.4,s:Math.random()*.3+.05,p:Math.random()*6.28,v:Math.random()*.035+.01});
+(function f(){x.clearRect(0,0,W,H);x.fillStyle=getComputedStyle(document.documentElement).getPropertyValue("--gd").trim();
+P.forEach(function(p){p.p+=p.v;p.y-=p.s;if(p.y<-5){p.y=H+5;p.x=Math.random()*W}x.globalAlpha=.2+.8*Math.abs(Math.sin(p.p));x.beginPath();x.arc(p.x,p.y,p.r,0,6.28);x.fill();if(p.r>1.6){x.fillRect(p.x-.4,p.y-p.r*3,.8,p.r*6);x.fillRect(p.x-p.r*3,p.y-.4,p.r*6,.8)}});
+requestAnimationFrame(f)})()})();
+</script>
+</body>
+</html>
